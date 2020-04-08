@@ -20,10 +20,10 @@
 
             <!--Grid column-->
             <div class="col-md-9 mb-md-0 mb-5">
-                <form id="contact-form" name="contact-form" action="mail.php" method="POST">
+                <form th:action="@{/sendMessage}"  method="POST">
 
                     <!--Grid row-->
-                    <div class="row" th:if="${!#request.isUserInRole('ADMIN') and !#request.isUserInRole('USER')}">
+                    <div class="row"  th:if="${!#request.isUserInRole('ADMIN') and !#request.isUserInRole('USER')}">
                         <!--Grid column-->
                         <div class="col-md-6">
                             <div class="md-form mb-0">
@@ -35,8 +35,9 @@
                         <!--Grid column-->
                         <div class="col-md-6">
                             <div class="md-form mb-0">
-                                <input type="text" id="email" name="email" class="form-control">
-                                <label for="email" class="">Twój email</label>
+                                <input type="text" id="email_sender" name="email_sender" class="form-control">
+                                <input type="number" id="id_recipient" placeholder="2" value="2"  name="id_recipient" hidden class="form-control">
+                                <label class="">Twój email</label>
                             </div>
                         </div>
 
@@ -48,8 +49,8 @@
                     <div class="row" th:if="${#request.isUserInRole('ADMIN') or #request.isUserInRole('USER')}">
                         <div class="col-md-6">
                             <div class="md-form mb-0">
-                                <input type="text" id="email" th:value="${user_email}" name="email" disabled hidden
-                                       class="form-control">
+                                <input type="text" id="email_sender" th:value="${email_sender}" name="email_sender" hidden class="form-control">
+                                <input type="number" id="id_recipient" value="2" name="id_recipient" hidden class="form-control">
 <!--                                <label for="email" class="">Twój email</label>-->
                             </div>
                         </div>
@@ -75,21 +76,26 @@
                         <div class="col-md-12">
 
                             <div class="md-form">
-                                <textarea type="text" id="message" name="message" rows="2"
+                                <textarea type="text" id="text_msg" name="text_msg" rows="2"
                                           class="form-control md-textarea"></textarea>
-                                <label for="message">Twoja wiadomość</label>
+                                <label for="text_msg">Twoja wiadomość</label>
                             </div>
 
                         </div>
                     </div>
                     <!--Grid row-->
 
+                    <div class="form-row">
+                        <div class="col-sm-12 col-md-12 form-group">
+                            <button type="submit" class="btn btn-primary">
+                                <i  aria-hidden="true"></i>
+                                Wyślij
+                            </button>
+                        </div>
+                    </div>
                 </form>
 
-                <div class="text-center text-md-left">
-                    <a class="btn btn-primary" onclick="document.getElementById('contact-form').submit();"
-                       style="color: white">Wyślij</a>
-                </div>
+
                 <div class="status"></div>
             </div>
             <!--Grid column-->

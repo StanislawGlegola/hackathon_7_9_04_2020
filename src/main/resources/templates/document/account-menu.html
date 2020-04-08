@@ -17,6 +17,12 @@
             <i> Wiadomości prywatne</i>
         </button>
     </a>
+    <a href="/account-menu/account-sended-messages">
+        <button class="btn btn-primary btn-sm form-control account-menu-button"
+                th:classappend="${#httpServletRequest.getRequestURI().startsWith('/account-menu/account-sended-messages') ? 'active-2nd-option':''}">
+            <i> Wiadomości wysłane</i>
+        </button>
+    </a>
     <a href="/account-menu/account-data">
         <button class="btn btn-primary btn-sm form-control account-menu-button"
                 th:classappend="${#httpServletRequest.getRequestURI().startsWith('/account-menu/admin-panel') ? 'active-2nd-option':''}">

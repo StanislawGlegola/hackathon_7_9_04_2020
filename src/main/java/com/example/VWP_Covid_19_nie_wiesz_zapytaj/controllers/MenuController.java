@@ -1,5 +1,7 @@
 package com.example.VWP_Covid_19_nie_wiesz_zapytaj.controllers;
 
+import com.example.VWP_Covid_19_nie_wiesz_zapytaj.models.Messages;
+import com.example.VWP_Covid_19_nie_wiesz_zapytaj.models.MessagesDto;
 import com.example.VWP_Covid_19_nie_wiesz_zapytaj.security.UserApp;
 import com.example.VWP_Covid_19_nie_wiesz_zapytaj.security.UserAppRepository;
 import lombok.AllArgsConstructor;
@@ -19,6 +21,9 @@ public class MenuController {
 
     @GetMapping("/survey")
     public String survey(Model model) {
+
+
+
         return "surveys package/survey";
     }
     @GetMapping("/applications-and-needs")
@@ -30,7 +35,10 @@ public class MenuController {
             Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
             UserApp userApp = (UserApp) authentication.getPrincipal();
             UserApp currentUser = userAppRepository.findUserAppById(userApp.getId());
-            model.addAttribute("user_email", currentUser.getEmail());
+//            model.addAttribute("email_sender", currentUser.getEmail());
+            String email_sender = currentUser.getEmail();
+            System.out.println("email uzytkownika to  " + email_sender);
+            model.addAttribute("email_sender", email_sender);
         }
         return "applications-and-needs package/applications-and-needs";
     }
