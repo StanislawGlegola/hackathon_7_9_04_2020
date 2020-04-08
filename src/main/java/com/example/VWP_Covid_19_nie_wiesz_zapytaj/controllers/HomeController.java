@@ -20,19 +20,6 @@ public class HomeController {
         return "index";
     }
 
-    @GetMapping("/survey")
-    public String survey(Model model) {
-
-
-        return "surveys package/survey";
-    }
-    @GetMapping("/applications-and-needs")
-    public String applications_and_needs(Model model) {
-
-
-        return "applications-and-needs package/applications-and-needs";
-    }
-
 
 
 
