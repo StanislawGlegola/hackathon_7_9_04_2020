@@ -28,10 +28,10 @@ body, html {
     box-sizing: border-box;
     overflow: hidden;
 }
-.header-panel .shop-name{
+.header-panel .page-name{
     text-align: left;
 }
-.shop-name img{
+.page-name img{
     text-align: left;
     height: 50px;
 }
@@ -207,11 +207,96 @@ nav .menu {
     font-family: 'Passion One', cursive;
 }
 
+.error {
+    color: red;
+}
+
+.user-name {
+    position: absolute;
+    right: 270px;
+    top: 12px;
+      }
 
 
+.account-page {
+
+    /*margin-left: 50px;*/
+    margin: 50px;
+    /*margin-top: 40px;*/
+    height: 100vh;
+}
+.searching-menu {
+    margin-top: 60px;
+}
+
+.account-menu-button {
+    margin-bottom: 10px;
+
+}
 
 
+.survey-page {
 
+    /*margin-left: 50px;*/
+    margin: 50px auto 50px auto;
+    /*margin-top: 40px;*/
+    /*height: 100vh;*/
+    width: 90%;
+}
+
+.survey-box {
+    margin: auto;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #dadce0;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+body {
+    -webkit-font-smoothing: antialiased;
+    font-family: 'Roboto', sans-serif;
+    background-image: url(http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/asanoha-400px.png);
+}
+p {
+    text-align: center;
+}
+.survey-header {
+    font-size: 25px;
+}
+
+.Grid {
+    display: -webkit-box;
+    display: flex;
+    flex-wrap: wrap;
+}
+.Grid-item {
+    width: 100%;
+    background: firebrick;
+    margin-top: 2%;
+}
+@media (min-width: 48rem) {
+    .Grid-item {
+        width: 49%;
+    }
+    .Grid-item:nth-child(odd) {
+        background: grey;
+        margin-right: 2%;
+    }
+}
+@media (min-width: 62rem) {
+    .Grid-item {
+        width: 23.5%;
+    }
+    .Grid-item:not(:nth-child(4n)) {
+        background: grey;
+        margin-right: 2%;
+    }
+}
+.Grid-item:before {
+    content: "";
+    float: left;
+    padding-top: 100%;
+}
 
 
 
@@ -348,9 +433,7 @@ nav .menu {
 
 /*}*/
 
-/*.error {*/
-/*    color: red;*/
-/*}*/
+
 
 /*.success {*/
 /*    color: green;*/

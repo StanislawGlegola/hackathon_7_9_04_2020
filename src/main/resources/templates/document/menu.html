@@ -2,11 +2,6 @@
 >
     <nav class="menu">
         <ul class='menu'>
-            <!--        <li>-->
-            <!--            <a href="/" class="shop-name">-->
-            <!--                    Sklep Optyczny-->
-            <!--            </a>-->
-            <!--        </li>-->
             <li>
                 <a
                    th:classappend="${#httpServletRequest.getRequestURI() == '/' && #request.getQueryString()== null ? 'active':''}"
@@ -21,7 +16,7 @@
                 </a>
             </li>
             <li>
-                <a href="/" >
+                <a href="/applications-and-needs" >
                     <i th:text="#{menu.3rd_place}"></i>
                 </a>
             </li>
@@ -30,38 +25,6 @@
                     <i th:text="#{menu.4th_place}"></i>
                 </a>
             </li>
-
-
-            <!--        <li>-->
-            <!--            <div th:if="${#httpServletRequest.getQueryString() ==null}">-->
-            <!--                <a-->
-            <!--                        th:href="@{/(glassesType=eyeglasses)}" th:text="#{menu.prescription_glasses}">-->
-            <!--                </a>-->
-            <!--                <a-->
-            <!--                        th:href="@{/(glassesType=sunglasses)}" th:text="#{menu.sunglasses}">-->
-            <!--                </a>-->
-            <!--            </div>-->
-            <!--        </li>-->
-            <!--        <li>-->
-            <!--            <a th:if="${#httpServletRequest.getQueryString() !=null}">-->
-            <!--                <a-->
-            <!--                        th:classappend="${#request.getQueryString().contains('eyeglasses') ? 'active':''}"-->
-            <!--                        th:href="@{/(glassesType=eyeglasses)}" th:text="#{menu.prescription_glasses}">-->
-            <!--                </a>-->
-            <!--                <a-->
-            <!--                        th:classappend="${#request.getQueryString().contains('sunglasses') ? 'active':''}"-->
-            <!--                        th:href="@{/(glassesType=sunglasses)}" th:text="#{menu.sunglasses}">-->
-            <!--                </a>-->
-            <!--            </a>-->
-            <!--        </li>-->
-<!--            <li>-->
-<!--                <a href="/account-menu/account-index"-->
-<!--                   th:text="#{menu.my_account}"-->
-<!--                   th:if="${#request.isUserInRole('ADMIN') or #request.isUserInRole('USER')}"-->
-<!--                   th:classappend="-->
-<!--                   (${#httpServletRequest.getRequestURI().startsWith('/account-menu') ? 'active':''})">-->
-<!--                </a>-->
-<!--            </li>-->
         </ul>
     </nav>
 
